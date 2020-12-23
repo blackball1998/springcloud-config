@@ -1,0 +1,22 @@
+server:
+  port: 3355
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  application:
+    name: springcloud-provider-dept
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7001/eureka,http://eureka2:7002/eureka,http://eureka3:7003/eureka
+---
+spring:
+  profiles: test
+  application:
+    name: springcloud-provider-dept
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7001/eureka,http://eureka2:7002/eureka,http://eureka3:7003/eureka
